@@ -8,9 +8,11 @@ class CoreConfig(AppConfig):
         from django.contrib.auth import get_user_model
         User = get_user_model()
 
-        if not User.objects.filter(username="admin").exists():
+        username = "hradmin"
+
+        if not User.objects.filter(username=username).exists():
             User.objects.create_superuser(
-                username="hradmin",
+                username=username,
                 email="Arshsidhu0404@gmail.com",
                 password="Arsh##@0404"
             )
